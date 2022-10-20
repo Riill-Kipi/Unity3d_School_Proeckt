@@ -1,0 +1,33 @@
+using UnityEngine;
+
+
+namespace PlayerControl
+{
+    public class PlayController : MonoBehaviour
+    {         
+    	public float speed = 7f;
+    	private void Update()
+    	{
+    		GetInput();
+    	}
+    	private void GetInput()
+    	{
+    		if(input.GetKey(KeyCode.W))
+    		{
+    			transform.localPosition += transform.forward * speed * Time.deltaTime;
+    		}
+    		if(input.GetKey(KeyCode.S))
+    		{
+    			transform.localPosition += -transform.forward * speed * Time.deltaTime;
+    		}
+    		if(input.GetKey(KeyCode.A))
+    		{
+    			transform.localPosition += -transform.right * speed * Time.deltaTime;
+    		}
+    		if(input.GetKey(KeyCode.W))
+    		{
+    			transform.localPosition += transform.right * speed * Time.deltaTime;
+    		}
+    	}
+    }
+}
